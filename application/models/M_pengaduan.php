@@ -17,6 +17,11 @@ class M_pengaduan extends CI_Model
 		$where;");
 	}
 
+	public function counttindakan($where = '')
+	{
+		return $this->db->query("SELECT tindakan.tanggal, COUNT(tindakan.id_tindakan) as tindakan FROM tindakan $where;");
+	}
+
 	public function countkategori($where = '')
 	{
 		$q = $this->db->query("SELECT DISTINCT pengaduan.tanggal,kategori.nama_kategori, count(pengaduan.id_pengaduan) as kategori FROM pengaduan 

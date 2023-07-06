@@ -27,6 +27,7 @@ class Home extends CI_Controller
 
 	public function dashboard_admin()
 	{
+		$user = $this->session->userdata('userdata_desa');
 		$data['judul'] 	= 'Sistem Informasi Pengaduan Masyarakat';
 		$data['aktif'] 	= 'home';
 		$data['count_all'] = $this->m_pengaduan->countpengaduan()->row();
@@ -35,6 +36,12 @@ class Home extends CI_Controller
 		$data['tindak_lanjut'] = $this->m_pengaduan->countpengaduan("where pengaduan.status='2' ")->row();
 		$data['not_verif'] = $this->m_pengaduan->countpengaduan("where pengaduan.status='1' ")->row();
 		$data['total'] = $this->m_pengaduan->countpengaduan("where pengaduan.status <> '0' ")->row();
+		if($user['level'] == 'petugas'){
+			$id_eksekutor = $user['eksekutor'];
+			$data['tindak_lanjut'] = $this->m_pengaduan->counttindakan("where tindakan.bentuk_tindakan IS NOT NULL AND tindakan.tim_eksekutor = '$id_eksekutor'")->row();
+			$data['not_verif'] = $this->m_pengaduan->counttindakan("where tindakan.bentuk_tindakan IS NULL AND tindakan.tim_eksekutor = '$id_eksekutor'")->row();
+			$data['total'] = $this->m_pengaduan->counttindakan("where tindakan.tim_eksekutor = '$id_eksekutor'")->row();
+		}
 
 		$this->load->view('home/index', $data);
 	}

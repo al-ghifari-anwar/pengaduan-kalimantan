@@ -120,7 +120,7 @@
                             <div class="widget-icon pull-right">
                                 <i class="gi gi-circle_question_mark text-light-op"></i>
                             </div>
-                            <h2 class="widget-heading h3 text-light"><strong><?php echo $not_verif->pengaduan; ?></strong></h2>
+                            <h2 class="widget-heading h3 text-light"><strong><?php echo $not_verif->tindakan; ?></strong></h2>
                             <span class="text-light-op">BELUM DITINDAK LANJUTI</span>
                         </div>
                     </a>
@@ -137,7 +137,7 @@
                             <div class="widget-icon pull-right">
                                 <i class="gi gi-circle_arrow_down text-light-op"></i>
                             </div>
-                            <h2 class="widget-heading h3 text-light"><strong><?php echo $tindak_lanjut->pengaduan; ?></strong></h2>
+                            <h2 class="widget-heading h3 text-light"><strong><?php echo $tindak_lanjut->tindakan; ?></strong></h2>
                             <span class="text-light-op">TINDAK LANJUT</span>
                         </div>
                     </a>
@@ -154,7 +154,7 @@
                             <div class="widget-icon pull-right">
                                 <i class="gi gi-circle_arrow_down text-light-op"></i>
                             </div>
-                            <h2 class="widget-heading h3 text-light"><strong><?php echo $total->pengaduan; ?></strong></h2>
+                            <h2 class="widget-heading h3 text-light"><strong><?php echo $total->tindakan; ?></strong></h2>
                             <span class="text-light-op">TOTAL PENGADUAN DAN TINDAK LANJUT</span>
                         </div>
                     </a>
