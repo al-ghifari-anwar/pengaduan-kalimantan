@@ -137,6 +137,7 @@
                                                     <div class="col-md-9">
                                                         <input type="text" name="tim_eksekutor" class="form-control" value="<?= $data['nama_eksekutor']; ?>" readonly>
                                                     </div>
+                                                    <input type="text" name="tim_eksekutor" value="<?= $data['tim_eksekutor'] ?>" hidden>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-md-3">Hasil</label>
@@ -202,9 +203,10 @@
                                                 <div class="form-group row">
                                                     <label class="col-md-3">Tim Eksekutor</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" name="tim_eksekutor" class="form-control" value="<?= $data['nama_eksekutor']; ?>" readonly>
+                                                        <input type="text" name="" class="form-control" value="<?= $data['nama_eksekutor']; ?>" readonly>
                                                     </div>
                                                 </div>
+                                                <input type="text" name="tim_eksekutor" value="<?= $data['tim_eksekutor'] ?>" hidden>
                                                 <div class="form-group row">
                                                     <label class="col-md-3">Latitutde</label>
                                                     <div class="col-md-9">

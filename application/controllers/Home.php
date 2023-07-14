@@ -38,8 +38,8 @@ class Home extends CI_Controller
 		$data['total'] = $this->m_pengaduan->countpengaduan("where pengaduan.status <> '0' ")->row();
 		if($user['level'] == 'petugas'){
 			$id_eksekutor = $user['eksekutor'];
-			$data['tindak_lanjut'] = $this->m_pengaduan->counttindakan("where tindakan.bentuk_tindakan IS NOT NULL AND tindakan.tim_eksekutor = '$id_eksekutor'")->row();
-			$data['not_verif'] = $this->m_pengaduan->counttindakan("where tindakan.bentuk_tindakan IS NULL AND tindakan.tim_eksekutor = '$id_eksekutor'")->row();
+			$data['not_verif'] = $this->m_pengaduan->counttindakan("where tindakan.bentuk_tindakan = '' AND tindakan.tim_eksekutor = '$id_eksekutor'")->row();
+			$data['tindak_lanjut'] = $this->m_pengaduan->counttindakan("where tindakan.bentuk_tindakan <> '' AND tindakan.tim_eksekutor = '$id_eksekutor'")->row();
 			$data['total'] = $this->m_pengaduan->counttindakan("where tindakan.tim_eksekutor = '$id_eksekutor'")->row();
 		}
 
